@@ -1,6 +1,8 @@
 Castage::Application.routes.draw do
   
   get "static_pages/home"
+  get "static_pages/property_description"
+  get "static_pages/reservation"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
