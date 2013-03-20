@@ -1,8 +1,13 @@
 Castage::Application.routes.draw do
   
-  get "static_pages/home"
-  get "static_pages/property_description"
-  get "static_pages/reservation"
+  #get "static_pages/home"
+  #get "static_pages/property_description"
+  #get "static_pages/reservation"
+
+  root to: 'static_pages#home'
+
+  match '/property_description', to: 'static_pages#property_description'
+  match '/reservation',          to: 'static_pages#reservation'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
