@@ -1,0 +1,65 @@
+%
+% Dokumentation für die Webapplication castage
+% Webseite für das Ferienhaus der Familie Knöll
+%
+% Author Nicolas Mauchle
+%
+% Basel, 2012
+%
+% Version 0.1
+%
+\documentclass[12pt,a4paper,german]{article}
+%
+\author{Nicolas Mauchle}
+%
+\usepackage[left=3cm,right=2cm,bottom=3cm,includeheadfoot]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    pdfborder = {0 0 0}
+}
+
+%Damit man label setzten kann wo man will
+\usepackage[all]{hypcap}
+%
+
+\usepackage[stable]{footmisc}
+% KOPF UND FUSS ZEILEN
+\pagestyle{fancy}
+%
+\fancyhf[R]{}
+\fancyhf[L]{\leftmark}
+%
+% suppress page number in bottom center:
+\cfoot{}
+%
+\fancyfoot[L]{}
+\fancyfoot[R]{Seite \thepage \  von  \pageref{LastPage}}
+%
+%Linie unten
+\renewcommand{\footrulewidth}{0.5pt}
+%
+\begin{document}
+%
+%-----------------------------------------------------------
+% Title Page
+%-----------------------------------------------------------
+\input{./titlePage.tex}
+%Inhalt 
+\tableofcontents
+%
+\newpage
+
+\section{Management Summary}
+Dieses Dokument dient dazu, ....
+
+\section{Aufbau}
+
+\section{}
+\end{document}

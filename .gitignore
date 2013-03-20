@@ -15,3 +15,6 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 .DS*
+*.aux
+*.out
+doc/Castage_Docu.log
