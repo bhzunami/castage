@@ -1,22 +1,20 @@
-  <div id="slideShow" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <%= image_tag("img_1.jpg", :alt => "Sample App") %>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Title Bild</h1>
-              <p class="lead">More Bla bli blu for the description of the picutre. 
-                Should be a little bit more bla bli blu</p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <%= image_tag(img_link, :alt => "Sample App") %>
-        </div>
-        <div class="item">
-          <%= image_tag("img_3.jpg", :alt => "Sample App") %>
+<div id="slideShow" class="carousel slide">
+  <div class="carousel-inner">
+
+    <% @images.each_with_index do | image, i | %>
+    <div class="item <%= "active"  if i == 0 %>">
+      <%= image_tag(image[:url], alt: image[:alt]) %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1><%= image[:title] %></h1>
+          <p class="lead"><%= image[:description] %></p>
         </div>
       </div>
-      <a class="left carousel-control" href="#slideShow" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#slideShow" data-slide="next">&rsaquo;</a>
-    </div><!-- /.carousel -->
+    </div>
+    <% end %>
+
+  </div>
+  <a class="left carousel-control" href="#slideShow" data-slide="prev">&lsaquo;</a>
+  <a class="right carousel-control" href="#slideShow" data-slide="next">&rsaquo;</a>
+</div>
+  <!-- /.carousel -->

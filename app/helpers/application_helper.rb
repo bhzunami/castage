@@ -7,4 +7,5 @@ module ApplicationHelper
 		return "#{base_title} | #{page_title}" unless page_title.empty?
 		return base_title
 	end
+
 end

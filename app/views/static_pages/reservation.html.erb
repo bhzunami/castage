@@ -1,4 +1,77 @@
 <% provide(:title, 'Reservation') %>
-<h1>Reservation</h1>
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <div class="container marketing">
+
+    	<!-- Three columns of text below the carousel -->
+    	<div class="row">
+
+    		<div class="span4">
+    			<img class="img-circle" data-src="holder.js/140x140">
+
+    			<h2>Reservation</h2>
+    			<p>Reservieren Sie das Haus noch heute. </p>
+    			<p>
+    				<a class="btn" href="#reservation">Zur Reservation &raquo;</a></p>
+    			</div><!-- /.span4 -->
+
+    			<div class="span4">
+    				<img class="img-circle" data-src="holder.js/140x140">
+
+    				<h2>Verfügbarkeit</h2>
+    				<p>Schauen Sie nach ob das Haus für Ihren gewünschten Termin frei ist.</p>
+    				<p><a class="btn" href="#availability">Auslastung &raquo;</a></p>
+
+    			</div><!-- /.span4 -->
+    			<div class="span4">
+    				<img class="img-circle" data-src="holder.js/140x140">
+    				<h2>Preise</h2>
+    				<p>Aktuelle Preise pro Übernachtungen</p>
+    				<p><a class="btn" href="#price">Preisliste &raquo;</a></p>
+    			</div><!-- /.span4 -->
+    		</div><!-- /.row -->
+
+    <!-- Reservation
+    ================================================== -->
+    <hr class="featurette-divider" >
+    
+
+    <div class="featurette" id="reservation">
+    	<!-- <%= image_tag('test.jpg', class: 'featurette-image pull-right') %> -->
+    	<%= link_to "Top", '#', class: "btn btn-medium btn-primary pull-right" %>
+    	<h2 class="featurette-heading">Reservation</h2>
+    	<p class="lead">Für eine Reservation schreiben Sie uns bitte ein Mail</p>
+    </div>
+
+      <!-- Verfügbarkeit
+      ================================================== -->
+
+      <hr class="featurette-divider" >
+      
+
+      <div class="featurette" id="availability">
+      	<!-- <%= image_tag('test.jpg', class: 'featurette-image pull-right') %> -->
+      	<%= link_to "Top", '#', class: "btn btn-medium btn-primary pull-right" %>
+      	<h2 class="featurette-heading">Verfügbarkeit</h2>
+      	<p class="lead">
+      		<iframe width="100%" height="620px" src="http://web.deskline.net/haslifewo/de/show_accommodation/GRI/38337d9a-8caf-4577-aee8-4fe4f08dcf84/chalet_vor_weissenfluh#Verfügbarkeit">
+      			<p>Your browser does not support iframes.</p>
+      		</iframe>
+      	</p>
+      </div>
+
+<!-- Price
+	================================================== -->
+	<hr class="featurette-divider" id="price">
+
+	<div class="featurette" >
+		<!-- <%= image_tag('test.jpg', class: 'featurette-image pull-right') %> -->
+		<%= link_to "Top", '#', class: "btn btn-medium btn-primary pull-right" %>
+		<h2 class="featurette-heading">Preise</h2>
+		<p class="lead">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p> 
+	</div>
+
+
+

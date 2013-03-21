@@ -11,10 +11,10 @@
 </head>
 <body>
 <%= render 'layouts/header' %>
-<%= render 'layouts/carousel', img_link: 'img_1.jpg'%>
+<%= render 'layouts/carousel' unless @images.nil? %>
     <div class="container">
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
 </body>
-</html>
+</html> 

@@ -1,4 +1,70 @@
 <% provide(:title, 'Objektbeschreibung') %>
-<h1>Objektbeschreibung</h1>
+<% provide(:title, 'Reservation') %>
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <div class="container marketing">
+
+    	<!-- Three columns of text below the carousel -->
+    	<div class="row">
+
+    		<div class="span4">
+    			<img class="img-circle" data-src="holder.js/140x140">
+
+    			<h2>Das Haus</h2>
+    			<p>Alle Informationen über das Ferienhaus. </p>
+    			<p>
+    				<a class="btn" href="#home">Zum Haus &raquo;</a></p>
+    			</div><!-- /.span4 -->
+
+    			<div class="span4">
+    				<img class="img-circle" data-src="holder.js/140x140">
+
+    				<h2>Lage</h2>
+    				<p>BAL BLI BLU</p>
+    				<p><a class="btn" href="#location">Lage &raquo;</a></p>
+
+    			</div><!-- /.span4 -->
+    			<div class="span4">
+    				<img class="img-circle" data-src="holder.js/140x140">
+    				<h2>Besonderheiten</h2>
+    				<p>Special</p>
+    				<p><a class="btn" href="#special">Preisliste &raquo;</a></p>
+    			</div><!-- /.span4 -->
+    		</div><!-- /.row -->
+
+    <!-- Reservation
+    ================================================== -->
+    <hr class="featurette-divider" id="home">
+
+
+    <div class="featurette" >
+    	<%= link_to "Top", '#', class: "btn btn-medium btn-primary pull-right" %>
+    	<!-- <%= image_tag('test.jpg', class: 'featurette-image pull-right') %> -->
+    	<h2 class="featurette-heading">Das Haus</h2>
+    	<p class="lead">Das Haus ....</p>
+    </div>
+
+      <!-- Verfügbarkeit
+      ================================================== -->
+
+      <hr class="featurette-divider" id="location">
+
+      <div class="featurette" >
+      	<%= link_to "Top", '#', class: "btn btn-medium btn-primary pull-right" %>
+      	<!-- <%= image_tag('test.jpg', class: 'featurette-image pull-right') %> -->
+      	<h2 class="featurette-heading">Lage</h2>
+      	<p class="lead">Bla Bli Blu</p>
+      </div>
+
+<!-- Price
+	================================================== -->
+	<hr class="featurette-divider" id="special">
+
+	<div class="featurette" >
+		<%= link_to "Top", '#', class: "btn btn-medium btn-primary pull-right" %>
+		<!-- <%= image_tag('test.jpg', class: 'featurette-image pull-right') %> -->
+		<h2 class="featurette-heading">Besonderheiten</h2>
+		<p class="lead">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p> 
+	</div>
