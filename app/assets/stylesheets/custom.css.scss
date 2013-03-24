@@ -5,6 +5,7 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$transparent_black: rgba(0,0,0,.4);
 
 /* universal */
 
@@ -58,7 +59,8 @@ p {
   line-height: 1.7em;
 }
 
-/* header */
+/* Header
+    -------------------------------------------------- */
 
 #logo {
   float: left;
@@ -81,66 +83,68 @@ p {
 
     /* Carousel base class */
     .carousel {
-    }
-
-    .carousel .container {
-      position: relative;
-      z-index: 9;
+      //width: 1170px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+        .container {
+          position: relative;
+          z-index: 9;
+        }
+        .item {
+          height: 500px;
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          min-width: 100%;
+          height: 500px;
+        }
     }
 
     .carousel-control {
       height: 80px;
       margin-top: 0;
       font-size: 120px;
-      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      text-shadow: 0 1px 1px $transparent_black;
       background-color: transparent;
       border: 0;
       z-index: 10;
     }
 
-    .carousel .item {
-      height: 500px;
-    }
-    .carousel img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      height: 500px;
-    }
-
     .carousel-caption {
-      background-color: transparent;
+      //background-color: transparent;
+      background-color: $transparent_black;
       position: static;
-      max-width: 350px;
-      padding: 0 20px;
-      margin-top: 200px;
+      max-width: 450px;
+      margin: 0 40px;
+      margin-top: 300px;
+        h1, .lead {
+          margin: 0;
+          line-height: 1.25;
+          color: #fff;
+          text-shadow: 0 1px 1px $transparent_black;
+        }
+        .btn {
+          margin-top: 10px;
+        }
     }
-    .carousel-caption h1,
-    .carousel-caption .lead {
-      margin: 0;
-      line-height: 1.25;
-      color: #fff;
-      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-    }
-    .carousel-caption .btn {
-      margin-top: 10px;
-    }
-
   /* MARKETING CONTENT
     -------------------------------------------------- */
 
     /* Center align the text within the three columns below the carousel */
-    .marketing .span4 {
-      text-align: center;
-    }
-    .marketing h2 {
-      font-weight: normal;
-    }
-    .marketing .span4 p {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
+    .marketing 
+      .span4 {
+        text-align: center;
+          p {
+            margin-left: 10px;
+            margin-right: 10px;
+          }
+      }
+      h2 {
+        font-weight: normal;
+      }
 
 /* Featurettes
     ------------------------- */
@@ -149,7 +153,7 @@ p {
       margin: 80px 0; /* Space out the Bootstrap <hr> more */
     }
     .featurette {
-      padding-top: 80px; /* Vertically center images part 1: add padding above and below text. */
+      padding-top: 40px; /* Vertically center images part 1: add padding above and below text. */
       overflow: hidden; /* Vertically center images part 2: clear their floats. */
     }
     .featurette-image {
@@ -172,7 +176,13 @@ p {
       letter-spacing: -1px;
     }
 
-/* footer */
+    .google_map {
+      margin-right: 10px;
+      //float: left;
+    }
+
+/* footer
+    -------------------------------------------------- */
 
 footer {
   margin-top: 45px;

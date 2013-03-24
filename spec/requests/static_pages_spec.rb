@@ -2,48 +2,30 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
+  subject { page }
+
   describe "Home page" do
-    
-    it "should have the content 'Willkommen auf der Seite' " do
-    	visit root_path
-    	page.should have_content( 'Ferienhaus vor Weissenfluh' )
-    end
-
-    it "should have the correct title" do
-    	visit root_path
-    	page.should have_selector('title',
-    							:text => "Ferienhaus vor Weissenfluh | Home")
-    end
-
+    before { visit root_path }
+    # Any content on the website
+    it { should have_content( 'This is a little bit bla bli blu for a subtitl' ) }
+    it { should have_selector('title',
+                  :text => full_title('') ) }
   end
 
   describe "Property Description page" do
+    before { visit property_description_path }
 
-  	it "should have the content 'Objektbeschreibung' " do
-  		visit property_description_path
-  		page.should have_content( 'Objektbeschreibung' )
-  	end
-
-  	it "should have the correct title" do
-    	visit property_description_path
-    	page.should have_selector('title',
-    							:text => "Ferienhaus vor Weissenfluh | Objektbeschreibung")
-    end
-
+  	it { should have_content( 'Objektbeschreibung' ) }
+    it { should have_selector('title',
+    							:text => full_title('Objektbeschreibung') ) }
   end
 
   describe "Reservation page" do
-
-  	it "should have the content 'Reservation' " do
-  		visit reservation_path
-  		page.should have_content( 'Reservation' )
-  	end
-
-  	it "should have the correct title" do
-    	visit reservation_path
-    	page.should have_selector('title',
-    							:text => "Ferienhaus vor Weissenfluh | Reservation")
-    end
-
+    before { visit reservation_path }
+  	
+  	it { should have_content( 'Reservation' ) }
+    it { should have_selector('title',
+    							:text => full_title('Reservation') ) }
   end
+  
 end
