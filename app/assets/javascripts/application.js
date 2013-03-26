@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require fancybox
 //= require_tree .
+
+$(document).ready(function() {
+    $('.fancybox').fancybox({
+      padding : 0,
+      openEffect  : 'elastic'
+    });
+
+$('.smooth_anker').click(function(e){
+    e.preventDefault();
+  $('html, body').animate({
+      scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+  });
+});
