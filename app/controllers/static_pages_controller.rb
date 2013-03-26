@@ -9,6 +9,9 @@ class StaticPagesController < ApplicationController
   	@images << { url: 'img_2.jpg', alt: 'IMAGE2', title: 'Natur erleben',
   				description: 'Geniessen sie die Natur und die freie Landluft.'} 
   	@images << { url: 'img_3.jpg', alt: 'IMAGE3', title: 'Title Bild 3'} 
+
+    @home_pictures = []
+    Dir.new("app/assets/images/home").entries.each do |f| @home_pictures.push(f) if File.file?(File.absolute_path(f,d) ) end
   end
 
   def property_description
