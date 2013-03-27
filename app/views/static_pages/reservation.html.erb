@@ -3,39 +3,130 @@
   <div class="row">
 
     <div class="span4">
-      <h2>Reservation</h2>
+      <%= image_tag('icons/calendar.png') %>
       <p>Reservieren Sie das Haus noch heute. </p>
       <p>
     	<a class="btn smooth_anker" href="#reservation">Zur Reservation &raquo;</a></p>
     </div>
 
     <div class="span4">
-      <h2>Verfügbarkeit</h2>
-      <p>Schauen Sie nach ob das Haus für Ihren gewünschten Termin frei ist.</p>
+      <%= image_tag('icons/check.png') %>
+      <p>Überprüfen Sie die Verfügbarkeit.</p>
       <p><a class="btn smooth_anker" href="#availability">Auslastung &raquo;</a></p>
     </div>
 
     <div class="span4">
-      <h2>Preise</h2>
-      <p>Aktuelle Preise pro Übernachtungen</p>
+      <%= image_tag('icons/money.png') %>
+      <p>Preisliste für Übernachtungen</p>
       <p><a class="btn smooth_anker" href="#price">Preisliste &raquo;</a></p>
     </div>
 
   </div><!-- /.row -->
 
   <!-- Reservation -->
-  <hr class="featurette-divider" >
+  <hr class="featurette-divider" id="reservation" >
   
-  <div class="featurette" id="reservation">
+  <div class="featurette">
     <%= link_to "Top", '#body', class: "btn btn-medium btn-primary pull-right smooth_anker" %>
     <h2 class="featurette-heading">Reservation</h2>
     <p class="lead">Für eine Reservation schreiben Sie uns bitte ein Mail</p>
+
+    <form class="form-horizontal">
+
+  <div class="row">
+ <div class="span5">
+
+
+      <div class="control-group">
+        <label class="control-label" for="inputName">Name</label>
+        <div class="controls">
+          <input type="text" id="inputName" placeholder="Name">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+          <input type="password" id="inputEmail" placeholder="Email">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputPersons">Anzahl Personen</label>
+        <div class="controls">
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputCar">Ich komme mit einem Auto</label>
+        <div class="controls">
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              Ja
+          </label>
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              Nein
+            </label>
+        </div>
+      </div>
+      
+      
+
+</div>
+<div class="span5">
+<div class="control-group">
+        <label class="control-label" for="inputPrename">Vorname</label>
+        <div class="controls">
+          <input type="text" id="inputPrename" placeholder="Vorname">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputPrename">Von</label>
+        <div class="controls">
+          <input type="text" id="inputPrename" placeholder="Von">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputPrename">Bis</label>
+        <div class="controls">
+          <input type="text" id="inputPrename" placeholder="Bis">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputPrename">Bemerkung</label>
+        <div class="controls">
+          <textarea rows="3"></textarea>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn pull-right">Reservieren</button>
+        </div>
+      </div>
+
+ </div> 
+</div>
+
+    </form>
   </div>
 
   <!-- Verfügbarkeit -->
-  <hr class="featurette-divider" >
+  <hr class="featurette-divider"  id="availability" >
 
-  <div class="featurette" id="availability">
+  <div class="featurette">
     <%= link_to "Top", '#body', class: "btn btn-medium btn-primary pull-right smooth_anker" %>
     <h2 class="featurette-heading">Verfügbarkeit</h2>
     <p class="lead">
@@ -54,6 +145,38 @@
     <%= link_to "Top", '#body', class: "btn btn-medium btn-primary pull-right smooth_anker" %>
     <h2 class="featurette-heading">Preise</h2>
     <p class="lead">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p> 
+    <table class="table table-hover table-condensed">
+  <caption>Unsere Preisliste</caption>
+  <thead>
+    <tr>
+      <th>Saison</th>
+      <th>Jahreszeit</th>
+      <th>Preis pro Nacht</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Zwischensaison</td>
+      <td>Winter</td>
+      <td>80.-</td>
+    </tr>
+    <tr>
+      <td>Zwischensaison</td>
+      <td>Sommer</td>
+      <td>70.-</td>
+    </tr>
+    <tr>
+      <td>Hochsaison</td>
+      <td>Winter</td>
+      <td>90.-</td>
+    </tr>
+    <tr>
+      <td>Hochsaison</td>
+      <td>Sommer</td>
+      <td>80.-</td>
+    </tr>
+  </tbody>
+</table>
   </div>
 
 

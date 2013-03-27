@@ -136,6 +136,9 @@ p {
     /* Center align the text within the three columns below the carousel */
     .marketing 
       .span4 {
+        img {
+          text-align: center;
+        }
         text-align: center;
           p {
             margin-left: 10px;
@@ -153,8 +156,13 @@ p {
       margin: 80px 0; /* Space out the Bootstrap <hr> more */
     }
     .featurette {
-      padding-top: 40px; /* Vertically center images part 1: add padding above and below text. */
+      //padding-top: 40px; /* Vertically center images part 1: add padding above and below text. */
       overflow: hidden; /* Vertically center images part 2: clear their floats. */
+      .fancybox {
+        img {
+          margin: 10px 7px;
+        }
+      }
     }
     .featurette-image {
       margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
@@ -183,7 +191,6 @@ p {
 
 /* footer
     -------------------------------------------------- */
-
 footer {
   margin-top: 45px;
   padding-top: 5px;
