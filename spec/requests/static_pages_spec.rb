@@ -7,7 +7,7 @@ describe "StaticPages" do
   describe "Home page" do
     before { visit root_path }
     # Any content on the website
-    it { should have_content( 'This is a little bit bla bli blu for a subtitl' ) }
+    it { should have_content( 'Herzlich Willkommen im Chalet vor Weissenfluh' ) }
     it { should have_selector('title',
                   :text => full_title('') ) }
   end
