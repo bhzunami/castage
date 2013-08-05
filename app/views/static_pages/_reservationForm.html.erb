@@ -1,0 +1,97 @@
+<!-- Reservation -->
+<hr class="featurette-divider" id="reservation" >
+
+<div class="featurette">
+  <%= link_to "Top", '#body', class: "btn btn-medium btn-primary pull-right smooth_anker" %>
+  <h2 class="featurette-heading">Reservation</h2>
+  <p class="lead">Für eine Reservation schreiben Sie uns bitte ein Mail</p>
+
+  <form class="form-horizontal">
+
+    <div class="row">
+     <div class="span5">
+      <div class="control-group">
+        <label class="control-label" for="inputName">Name</label>
+        <div class="controls">
+          <input type="text" id="inputName" placeholder="Name">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+          <input type="password" id="inputEmail" placeholder="Email">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputPersons">Anzahl Personen</label>
+        <div class="controls">
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputCar">Ich komme mit einem Auto</label>
+        <div class="controls">
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Ja
+          </label>
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Nein
+          </label>
+        </div>
+      </div>
+      
+      
+
+    </div>
+    <div class="span5">
+      <div class="control-group">
+        <label class="control-label" for="inputPrename">Vorname</label>
+        <div class="controls">
+          <input type="text" id="inputPrename" placeholder="Vorname">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputPrename">Von</label>
+        <div class="controls">
+          <input type="text" id="inputPrename" placeholder="Von">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputPrename">Bis</label>
+        <div class="controls">
+          <input type="text" id="inputPrename" placeholder="Bis">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="inputPrename">Bemerkung</label>
+        <div class="controls">
+          <textarea rows="3"></textarea>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn pull-right">Reservieren</button>
+        </div>
+      </div>
+
+    </div> 
+  </div>
+
+</form>
+</div>

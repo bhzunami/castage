@@ -17,107 +17,17 @@
       <p><a class="btn smooth_anker" href="#location">Lage &raquo;</a></p>
     </div>
 
-  <!-- Besonderes -->
+  <!-- Region / excursions -->
     <div class="span4">
       <%= image_tag('icons/star.png') %>
-      <p>Das gewisse Etwas</p>
-      <p><a class="btn smooth_anker" href="#special">Besonderes &raquo;</a></p>
+      <p>Rundherum</p>
+      <p><a class="btn smooth_anker" href="#special">Region / Ausflüge &raquo;</a></p>
     </div>
 
   </div> <!-- row -->
 
-  <!-- Haus
-       ================================================== -->
-  <hr class="featurette-divider" id="home" />
+  <%= render 'homeDescription' %>
 
-  <div class="featurette" >
-    <%= link_to "Top", '#body', class: "btn btn-medium btn-primary pull-right smooth_anker" %>
-    <h2 class="featurette-heading">Das Haus</h2>
-    <p class="lead">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
-      <a class="fancybox" href="<%= image_path('home/chalet01.jpg') %>" rel="gallery" title="Ferienhaus">
-        <%= image_tag('home/chalet01_tb.jpg' ) %>
-      </a>
-      <a class="fancybox" href="<%= image_path('home/chalet02.jpg') %>" rel="gallery">
-        <%= image_tag('home/chalet02_tb.jpg' ) %>
-      </a>
-      <a class="fancybox" href="<%= image_path('home/Zimmer-untenkl.jpg') %>" rel="gallery">
-        <%= image_tag('home/Zimmer-untenkl_tb.jpg' ) %>
-      </a>
-      <a class="fancybox" href="<%= image_path('home/Schlafzimmerkl.jpg') %>" rel="gallery">
-        <%= image_tag('home/Schlafzimmerkl_tb.jpg' ) %>
-      </a>
-      <a class="fancybox" href="<%= image_path('home/stube1kl.jpg') %>" rel="gallery">
-        <%= image_tag('home/stube1kl_tb.jpg' ) %>
-      </a>
-      <a class="fancybox" href="<%= image_path('home/stube2kl.jpg') %>" rel="gallery">
-        <%= image_tag('home/stube2kl_tb.jpg' ) %>
-      </a>
-      <a class="fancybox" href="<%= image_path('home/kinderzimmerkl.jpg') %>" rel="gallery">
-        <%= image_tag('home/kinderzimmerkl_tb.jpg' ) %>
-      </a>
-      <a class="fancybox" href="<%= image_path('home/Kuechekl.jpg') %>" rel="gallery">
-        <%= image_tag('home/Kuechekl_tb.jpg' ) %>
-      </a>
-      <a class="fancybox" href="<%= image_path('home/Balkon.jpg') %>" rel="gallery">
-        <%= image_tag('home/Balkon_tb.jpg' ) %>
-      </a>
-      <a class="fancybox" href="<%= image_path('home/badkl.jpg') %>" rel="gallery">
-        <%= image_tag('home/badkl_tb.jpg' ) %>
-      </a>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-      </p>
-  </div>
+  <%= render 'location' %>
 
-  <!-- Lage
-       ================================================== -->
-  <hr class="featurette-divider" id="location" />
-
-  <div class="featurette" >
-    <%= link_to "Top", '#body', class: "btn btn-medium btn-primary pull-right smooth_anker" %>
-    <!-- IFrame for Google Maps> -->
-    <iframe width="500" height="350" frameborder="0" scrolling="no" marginheight="0"marginwidth="0" class="pull-left google_map" src="https://maps.google.com/maps/ms?msa=0&amp;msid=204799266309973386557.0004d8af62db1dc00fb2e&amp;ie=UTF8&amp;t=m&amp;ll=46.721476,8.224511&amp;spn=0.010297,0.018282&amp;z=15&amp;output=embed">
-    </iframe>
-    <h2 class="featurette-heading">Lage</h2>
-    <p class="lead">Hasliberg Weissenfluh, Zufahrt mit 2 Parkplätzen beim Haus, im Winter ab Parkplatz Weissenfluh mit Schneeketten 200 m, Restaurants, Lebensmittel, Bahnen Meiringen-Reuti-Mägisalp sind in 20 Gehminuten oder 5 Autominuten erreichbar</p>
-    <p>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua
-    </p>
-  </div>
-
-  <!-- Besonderheit
-       ================================================== -->
-  <hr class="featurette-divider" id="special" />
-
-  <div class="featurette" >
-    <%= link_to "Top", '#body', class: "btn btn-medium btn-primary pull-right smooth_anker" %>
-    <h2 class="featurette-heading">Besonderheiten</h2>
-    <p class="lead">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
-    <p>
-      <ul>
-        <li>Strom</li>
-        <li>Zentralheizung Öl</li>
-        <li>Warmwasser</li>
-        <li>Küchenwäsche im Preis inbegriffen</li>
-        <li>Telefon</li>
-        <li>Radio</li>
-        <li>TV-Sat</li>
-        <li>Waschmaschine</li>
-        <li>Kinderbett</li>
-      </ul>
-    </p>
-    <blockquote>
-      <p> Die Schweizer Schneesportschule Meiringen-Hasliberg mit dem Skihäsliland auf «Bidmi» gehört zu den besten Kinderskischulen der Schweiz.</p>
-      <small><cite title="Quelle"> haslita.ch</cite></small>
-</blockquote>
-<p>
-  nicht inbegriffen
-
-Telefon nach Zähler zuzügl. Fr. 5.--/Woche, Kehricht Fr. 1.90/Sack, 1 Korb Cheminéeholz Fr. 6.--, Endreinigung Fr. 60.--, Bettwäsche Fr. 5.--/Bett, Kurtaxe Erwachsene Fr. 2.60/Tag und Kinder Fr. 1.--/Tag
-
-Anreise / Abreise
-
-Anreise ab 13.00 Uhr, Abreise bis 10.00 Uhr
-<p>
-   
-  </div>
+  <%= render 'specials' %>
