@@ -4,7 +4,9 @@
   </small>
   <nav>
     <ul>
-      <li><%= link_to "Login", login_path %></li>
+    	<% if !signed_in? %>
+     		<li><%= link_to "Login", login_path %></li>
+      <% end %>
       <li><%= link_to "Kontakt", '#' %></li>
     </ul>
   </nav>

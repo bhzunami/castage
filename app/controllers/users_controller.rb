@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  
   def new
+  	@user = User.new
   end
 
   def show
@@ -9,7 +11,8 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.save
-  		flash[:success] = "User is saved"
+  		flash[:success] = "User #{user.name} is saved"
+  		redirect_to current_user
   	else
   		render 'new'
   	end
