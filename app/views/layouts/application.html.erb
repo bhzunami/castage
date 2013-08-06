@@ -13,6 +13,9 @@
 <%= render 'layouts/header' %>
 <%= render 'layouts/carousel' unless @images.nil? %>
     <div class="container">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+      <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>

@@ -1,7 +1,7 @@
 Castage::Application.routes.draw do
   
   resources :users
-
+  resources :sessions, only: [:new, :create, :destroy]
   #get "static_pages/home"
   #get "static_pages/property_description"
   #get "static_pages/reservation"
@@ -10,6 +10,9 @@ Castage::Application.routes.draw do
 
   match '/property_description', to: 'static_pages#property_description'
   match '/reservation',          to: 'static_pages#reservation'
+
+  match '/login',  to: 'sessions#new',         via: 'get'
+  match '/logout', to: 'sessions#destroy',     via: 'delete'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
