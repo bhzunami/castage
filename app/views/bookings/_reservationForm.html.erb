@@ -1,0 +1,27 @@
+<!-- Reservation -->
+<hr class="featurette-divider" id="reservation" >
+
+<div class="featurette">
+  <%= link_to "Top", '#body', class: "btn btn-medium btn-primary pull-right smooth_anker" %>
+  <h2 class="featurette-heading">Reservation</h2>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <p class="lead">Für eine Reservation schreiben Sie uns bitte ein Mail</p>
+
+  <div class="form-horizontal">
+    <div class="row">
+
+      <%= simple_form_for(@booking) do |f| %>
+
+      <%= render 'fields', f: f %>
+    </div>
+    <div class="span3 offset1">
+    <%= f.submit "Anfragen", class: "btn btn-large btn-primary" %>
+</div>
+
+  <% end %>
+  </div>
+
+</div>
+</div>

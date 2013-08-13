@@ -1,0 +1,23 @@
+<div class="span12">
+
+<%= render 'shared/error_messages', object: f.object %>
+</div>
+  <div class="span4">
+    <%= f.input :name, error: false, input_html: { class: "span3" }, placeholder: "Hans Muster"%>
+
+    <%= f.input :email, error: false, input_html: { class: "span3" } %>
+    <%= f.input :adults, error: false, label: "Anzahl Erwachsene", input_html: { class: "span3" } %>
+    <%= f.input :children, error: false, label: "Anzahl Kinder", input_html: { class: "span3" } %>
+
+     <%= f.input :with_car, as: :boolean, label: "mit Fahrzeug" %>
+
+     
+
+  </div>
+  <div class="span4">
+    <%= f.input :start_date, error: false, label: "Startdatum", input_html: { class: "span3" }, as: :date_picker %>
+
+    <%= f.input :end_date, error: false, label: "Enddatum", input_html: { class: "span3" }, as: :date_picker %>
+
+    <%= f.input :note, label: "Bemerkungen", input_html: { class: "span3" } %>
+  </div>
