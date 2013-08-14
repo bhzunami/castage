@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+	before_filter :signed_in_user, only: [:index, :show]
 
 	def create
 		@booking = Booking.new(params[:booking])
@@ -6,7 +7,6 @@ class BookingsController < ApplicationController
 			flash[:success] = "Buchung erfolgreich"
 			redirect_to new_booking_url
 		else
-			#@images = get_images
 			render 'new'
 		end
 	end
@@ -16,6 +16,14 @@ class BookingsController < ApplicationController
   	@booking = Booking.new
 	end
 
+	def index
+		@bookings = Booking.all
+	end
+
+	def show
+		@booking = Booking.find_by_id(params[:id])
+	end
+#-------------------------------
 	private
 
 		def get_images

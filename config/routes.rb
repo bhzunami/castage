@@ -2,7 +2,7 @@ Castage::Application.routes.draw do
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :bookings, only: [:new, :create]
+  resources :bookings, only: [:new, :create, :show, :index]
   #get "static_pages/home"
   #get "static_pages/property_description"
   #get "static_pages/reservation"
@@ -10,7 +10,7 @@ Castage::Application.routes.draw do
   root to: 'static_pages#home'
 
   match '/property_description', to: 'static_pages#property_description'
-  #match '/reservation',          to: 'static_pages#reservation'
+  match '/contact',              to: 'static_pages#contact'
 
   match '/login',  to: 'sessions#new',         via: 'get'
   match '/logout', to: 'sessions#destroy',     via: 'delete'

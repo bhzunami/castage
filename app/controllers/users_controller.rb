@@ -49,13 +49,6 @@ class UsersController < ApplicationController
 
   private
 
-  def signed_in_user
-  	unless signed_in?
-  		store_location
-  		redirect_to login_url, notice: "Bitte zuerst einloggen"
-  	end
-  end
-
   def correct_user
   	@user = User.find(params[:id])
   	redirect_to(root_url) unless current_user?(@user)
