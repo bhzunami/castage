@@ -2,18 +2,17 @@
 #
 # Table name: bookings
 #
-#  id                      :integer          not null, primary key
-#  name                    :string(255)
-#  email                   :string(255)
-#  adults                  :integer
-#  children                :integer
-#  start_date              :date
-#  end_date                :date
-#  with_car                :boolean
-#  note                    :text
-#  created_at              :datetime         not null
-#  updated_at              :datetime         not null
-#  validates_acceptance_of :boolean
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  email      :string(255)
+#  adults     :integer
+#  children   :integer
+#  start_date :date
+#  end_date   :date
+#  with_car   :boolean
+#  note       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 require 'spec_helper'

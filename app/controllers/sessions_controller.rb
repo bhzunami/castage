@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 	def create
 		user = User.find_by_email(params[:email].downcase)
 		if user && user.authenticate(params[:password])
-			sign_in user
+			sign_in(user, params[:remember_me])
 			redirect_back_or user
 		else
 			# Use flash.now for disapear website

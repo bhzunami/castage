@@ -265,11 +265,11 @@ textarea {
   height: 80px !important
 }
 input {
-  height: 30px !important;
+  height: auto !important;
 }
 
-.btn {
-  height: auto !important
+.datepicker {
+  height: 30px !important;
 }
 
 #error_explanation {

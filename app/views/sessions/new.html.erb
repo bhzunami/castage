@@ -11,8 +11,18 @@
 			<%= label_tag :password %>
 			<%= password_field_tag "password" %>
 
-			<%= submit_tag "Log in", class: "btn btn-large btn-primary" %>
+			<label class="checkbox">
+				<%= check_box_tag :remember_me, 1, params[:remember_me] %>
+				<%= label_tag :remember_me %>
+    	</label>
+    	
+    	<label>
+				<%= link_to "Passwort vergessen", password_reset_path %>
+			</label>
+
+			<label>
+				<%= submit_tag "Log in", class: "btn btn-large btn-primary" %>
+			</label>
 		<% end %>
 	</div>
 </div>
-

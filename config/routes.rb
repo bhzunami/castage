@@ -15,6 +15,12 @@ Castage::Application.routes.draw do
   match '/login',  to: 'sessions#new',         via: 'get'
   match '/logout', to: 'sessions#destroy',     via: 'delete'
 
+  # Password restore
+  get "/password_reset", to: 'users#show_password_reset', as: :password_reset
+  post "/password_reset", to:'users#password_reset'
+  get "/edit_password_reset/:id", to: 'users#edit_password_reset', as: :edit_password_reset
+  post "/update_password_reset/:id", to: 'users#update_password_reset'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
