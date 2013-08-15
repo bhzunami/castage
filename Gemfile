@@ -20,6 +20,7 @@ gem "jquery-ui-rails"
 gem 'jquery-rails', '2.0.2'
 gem "fancybox2-rails", "0.2.4"
 
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
