@@ -272,6 +272,10 @@ input {
   height: 30px !important;
 }
 
+.boolean {
+  padding-top: 0px !important;
+}
+
 #error_explanation {
   color: #f00;
   ul {
@@ -284,26 +288,6 @@ input {
   margin-bottom: 0px !important;
   @extend .control-group;
   @extend .error;
-
-}
-
-/* users index */
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:last-child {
-      border-bottom: 1px solid $grayLighter;
-    }
-  }
-}
-
-.alert {
-  margin-top: 10px;
 
 }
 
