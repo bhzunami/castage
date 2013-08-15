@@ -68,7 +68,7 @@ p {
 }
 
 /* Header
-    -------------------------------------------------- */
+-------------------------------------------------- */
 
 #logo {
   float: left;
@@ -87,83 +87,84 @@ p {
 }
 
 /* CUSTOMIZE THE CAROUSEL
-    -------------------------------------------------- */
+-------------------------------------------------- */
 
-    /* Carousel base class */
-    .carousel {
-      //width: 1170px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 30px;
-        .container {
-          position: relative;
-          z-index: 9;
-        }
-        .item {
-          height: 500px;
-        }
-        img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          min-width: 100%;
-          height: 500px;
-        }
-    }
+/* Carousel base class */
+.carousel {
+  //width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  .container {
+   position: relative;
+   z-index: 9;
+  }
+  .item {
+  height: 500px;
+  }
 
-    .carousel-control {
-      height: 80px;
-      margin-top: 0;
-      font-size: 120px;
-      text-shadow: 0 1px 1px $transparent_black;
-      background-color: transparent;
-      border: 0;
-      z-index: 10;
-    }
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+}
 
-    .carousel-caption {
+.carousel-control {
+  height: 80px;
+  margin-top: 0;
+  font-size: 120px;
+  text-shadow: 0 1px 1px $transparent_black;
+  background-color: transparent;
+  border: 0;
+  z-index: 10;
+}
+
+.carousel-caption {
       //background-color: transparent;
       background-color: $transparent_black;
       position: static;
       max-width: 450px;
       margin: 0 40px;
       margin-top: 300px;
-        h1, .lead {
-          margin: 0;
-          line-height: 1.25;
-          color: #fff;
-          text-shadow: 0 1px 1px $transparent_black;
-        }
-        .btn {
-          margin-top: 10px;
-        }
+      h1, .lead {
+        margin: 0;
+        line-height: 1.25;
+        color: #fff;
+        text-shadow: 0 1px 1px $transparent_black;
+      }
+      .btn {
+        margin-top: 10px;
+      }
     }
   /* MARKETING CONTENT
-    -------------------------------------------------- */
+  -------------------------------------------------- */
 
-    /* Center align the text within the three columns below the carousel */
-    .marketing 
-      .span4 {
-        img {
-          text-align: center;
-        }
-        text-align: center;
-          p {
-            margin-left: 10px;
-            margin-right: 10px;
-          }
-      }
-      h2 {
-        font-weight: normal;
-      }
+  /* Center align the text within the three columns below the carousel */
+  .marketing 
+  .span4 {
+    img {
+      text-align: center;
+    }
+    text-align: center;
+    p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  h2 {
+    font-weight: normal;
+  }
 
 /* Featurettes
-    ------------------------- */
+------------------------- */
 
-    .featurette-divider {
-      margin: 80px 0; /* Space out the Bootstrap <hr> more */
-    }
-    .featurette {
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
       //padding-top: 40px; /* Vertically center images part 1: add padding above and below text. */
       overflow: hidden; /* Vertically center images part 2: clear their floats. */
       .fancybox {
@@ -198,7 +199,7 @@ p {
     }
 
 /* footer
-    -------------------------------------------------- */
+-------------------------------------------------- */
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -268,8 +269,8 @@ input {
 }
 
 .btn {
-    height: auto !important
-  }
+  height: auto !important
+}
 
 #error_explanation {
   color: #f00;
@@ -305,6 +306,5 @@ input {
   margin-top: 10px;
 
 }
-
 
 

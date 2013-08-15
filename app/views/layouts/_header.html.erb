@@ -13,9 +13,11 @@
                 Konto <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Profil", edit_user_path(current_user) %></li>
+                <li><%= link_to "Profil bearbeiten", edit_user_path(current_user) %></li>
                 <li><%= link_to "Alle Benutzer", users_path %></li>
-                <li><%= link_to "Neuer Benutzer", new_user_path %></li>
+                <% if current_user.admin? %>
+                  <li><%= link_to "Neuer Benutzer", new_user_path %></li>
+                <% end %>
                 <li class="divider"></li>
                 <li>
                   <%= link_to "Log out", logout_path, method: "delete" %>
