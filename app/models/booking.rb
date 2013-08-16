@@ -13,6 +13,7 @@
 #  note       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  state      :string(255)
 #
 
 class Booking < ActiveRecord::Base
@@ -26,7 +27,8 @@ class Booking < ActiveRecord::Base
   								:with_car,
                   :terms_of_service
 
-
+# Validations
+#----------------------------------------
 	validates :name, presence: true, length: { maximum: 50}
   
  	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -41,23 +43,55 @@ class Booking < ActiveRecord::Base
   validates :end_date, presence: true
   validate :check_end_date
 
+  #State Machine
+  state_machine :state, initial: :pending do
+    event :accept do
+      transition pending: :accepted
+    end
+
+    event :reject do
+      transition pending: :rejected
+    end
+
+    event :archive do
+      transition accepted: :archive
+      transition rejected: :archive
+    end
+
+    state :accepted do
+      # To be define
+    end
+
+    state :rejected do
+      # To be define
+    end
+
+    state :pending do
+      # To be define
+    end
+      
+  end
 
 
-def check_start_date
-  if self.start_date != nil && self.start_date.past?
+  def accept_booking(booking)
+    throw "Kein Anfrage" unless booking.instance_of? Booking
+    self.transaction do
+      booking.accept
+    end
+  end
+
+  # Public Methos
+  #----------------------------------------
+  def check_start_date
+    if self.start_date != nil && self.start_date.past?
       errors.add(:start_date, 'muss heute sein oder in der Zukunft liegen')
+    end
   end
-end
 
-def check_end_date
-  if self.end_date != nil
-    errors.add(:end_date, 'muss grösser sein als Startdatum') unless self.start_date < self.end_date
+  def check_end_date
+    if self.end_date != nil
+      errors.add(:end_date, 'muss grösser sein als Startdatum') unless self.start_date < self.end_date
+    end
   end
-end
-
-
-
-
-
 
 end

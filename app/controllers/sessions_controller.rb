@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 		user = User.find_by_email(params[:email].downcase)
 		if user && user.authenticate(params[:password])
 			sign_in(user, params[:remember_me])
-			redirect_back_or user
+			redirect_back_or bookings_path
 		else
 			# Use flash.now for disapear website
 			flash.now[:error] = 'Flasches Logindaten'

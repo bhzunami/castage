@@ -17,12 +17,39 @@ class BookingsController < ApplicationController
 	end
 
 	def index
-		@bookings = Booking.all
+		@bookings_new = Booking.with_state(:pending).paginate(:page => params[:page], :per_page => 10)
+		@bookings_accepted = Booking.with_state(:accepted).paginate(:page => params[:page], :per_page => 10)
+		@bookings_rejected = Booking.with_state(:rejected).paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def show
 		@booking = Booking.find_by_id(params[:id])
 	end
+
+
+	def accept
+		booking = Booking.find(params[:booking_id])
+		booking.accept
+		flash[:success] = "Anfrage von #{booking.name} wurde erfolgreich angenommen."
+		redirect_to bookings_path
+	end
+
+	def reject
+		booking = Booking.find(params[:booking_id])
+		booking.reject
+		flash[:success] = "Anfrage von #{booking.name} wurde erfolgreich abgelehnt."
+		redirect_to bookings_path
+	end
+
+	def archive
+		booking = Booking.find(params[:booking_id])
+		if booking.accepted? || booking.rejected?
+			booking.archive
+			flash[:success] = "Anfrage von #{booking.name} wurde erfolgreich archiviert."
+			redirect_to bookings_path
+		end
+	end
+
 #-------------------------------
 	private
 
@@ -32,4 +59,5 @@ class BookingsController < ApplicationController
   		@images << { url: 'Haus2.jpg', alt: 'IMAGE2', title: 'Title Bild 2'} 
   		@images << { url: 'img_3.jpg', alt: 'IMAGE3', title: 'Title Bild 3'}
 		end
+
 end

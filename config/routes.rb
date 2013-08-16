@@ -2,7 +2,11 @@ Castage::Application.routes.draw do
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :bookings, only: [:new, :create, :show, :index]
+  resources :bookings, only: [:new, :create, :show, :index] do
+    post "accept"
+    post "reject"
+    post "archive"
+  end
   #get "static_pages/home"
   #get "static_pages/property_description"
   #get "static_pages/reservation"
