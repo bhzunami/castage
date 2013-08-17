@@ -292,3 +292,39 @@ input {
 }
 
 
+.monthName th {
+  font-weight: normal;
+  text-align: right;
+  padding-top: 1em;
+  padding-bottom: 0.7em;
+}
+
+.dayName th {
+  font-size: 1em;
+  padding-top: 0.6em;
+  padding-bottom: 0.3em;
+  color: black;
+}
+
+.otherMonth, .day, .specialDay, .normalDay {
+  padding: 0.7em 1em;
+  border-right: 1px solid white;
+  width: 25px;
+  height: 20px;
+  text-align: center;
+
+}
+.otherMonth {
+  color: #eeeeee;
+}
+
+
+.specialDay {
+  background-color: #FA5858;
+  color: white;
+}
+
+.weekNumber {
+  background-color: #dedede;
+}
+

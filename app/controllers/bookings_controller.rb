@@ -15,6 +15,8 @@ class BookingsController < ApplicationController
 	def new
 		@images = get_images
   	@booking = Booking.new
+  	get_reserved_dates
+  	@date = params[:month] ? Date.parse(params[:month]) : Date.today
 	end
 
 	def index
@@ -74,5 +76,20 @@ class BookingsController < ApplicationController
   		@images << { url: 'Haus2.jpg', alt: 'IMAGE2', title: 'Title Bild 2'} 
   		@images << { url: 'img_3.jpg', alt: 'IMAGE3', title: 'Title Bild 3'}
 		end
+
+		def get_reserved_dates
+			@dates_test = []
+			bookings = Booking.with_state(:accepted)
+			bookings.each do |b|
+				
+				days = (b.end_date - b.start_date).to_i
+				days.times do |i|
+					@dates_test << b.start_date + i
+				end
+				@dates_test << b.end_date
+			end
+			return @dates_test
+
+  	end
 
 end

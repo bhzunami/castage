@@ -24,8 +24,6 @@ gem 'newrelic_rpm'
 
 gem 'figaro'
 
-gem "watu_table_builder", :require => "table_builder"
-
 gem 'state_machine'
 gem 'ruby-graphviz', :require => 'graphviz' # Optional: only required for graphing
 
@@ -34,6 +32,8 @@ gem 'ruby-graphviz', :require => 'graphviz' # Optional: only required for graphi
 
 gem "range_validator", "~> 0.2.1"
 
+
+gem "calendar_helper", "~> 0.2.6"
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
