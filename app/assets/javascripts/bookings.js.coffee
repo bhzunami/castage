@@ -4,3 +4,4 @@
 $ ->
 	$("#booking_start_date").datepicker dateFormat: "dd.mm.yy"
 	$("#booking_end_date").datepicker dateFormat: "dd.mm.yy"
+

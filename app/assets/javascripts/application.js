@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.cookie
 //= require jquery.ui.datepicker
 //= require fancybox
 //= require bootstrap
@@ -30,4 +31,9 @@ $('.smooth_anker').click(function(e){
     }, 500);
     return false;
   });
+
+if ($.cookie('date_changer')) {
+  location.hash = "#availability";
+}
+
 });

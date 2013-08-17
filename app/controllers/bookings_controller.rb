@@ -17,6 +17,11 @@ class BookingsController < ApplicationController
   	@booking = Booking.new
   	get_reserved_dates
   	@date = params[:month] ? Date.parse(params[:month]) : Date.today
+  	if(params.has_key?(:month) )
+  		cookies[:date_changer] = true
+  	else
+  		cookies.delete(:date_changer)
+  	end
 	end
 
 	def index

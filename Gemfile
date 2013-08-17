@@ -24,6 +24,8 @@ gem 'newrelic_rpm'
 
 gem 'figaro'
 
+gem "jquery-cookie-rails", "~> 1.3.1"
+
 gem 'state_machine'
 gem 'ruby-graphviz', :require => 'graphviz' # Optional: only required for graphing
 
