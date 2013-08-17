@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 	def create
 		@booking = Booking.new(params[:booking])
 		if @booking.save
+			@booking.new_booking
 			flash[:success] = "Buchung erfolgreich"
 			redirect_to new_booking_url
 		else

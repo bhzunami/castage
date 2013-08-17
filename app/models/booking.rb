@@ -51,6 +51,7 @@ class Booking < ActiveRecord::Base
 
   #State Machine
   state_machine :state, initial: :pending do
+    
     event :accept do
       transition pending: :accepted
     end
@@ -73,11 +74,24 @@ class Booking < ActiveRecord::Base
     end
 
     state :pending do
-      # To be define
+      #BookingMailer.booking_confirmation(self).deliver
     end
       
   end
 
+  def new_booking
+    #send_booking_confirmation
+    send_booking_notification
+  end
+
+
+  def send_booking_confirmation
+    BookingMailer.booking_confirmation(self).deliver
+  end
+
+  def send_booking_notification
+    BookingMailer.booking_notification(self).deliver
+  end
 
   def accept_booking(booking)
     throw "Kein Anfrage" unless booking.instance_of? Booking
