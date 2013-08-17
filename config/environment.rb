@@ -5,10 +5,10 @@ require File.expand_path('../application', __FILE__)
 Castage::Application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => 'app15258626@heroku.com',
-  :password => 'rukgjw9w',
-  :domain => 'castage.heroku.com',
-  :address => 'smtp.sendgrid.net',
+  :user_name => ENV["SENDGRID_USERNAME"],
+  :password => ENV["SENDGRID_PASSWORD"],
+  :domain => ENV["SENDGRID_DOMAIN"],
+  :address => ENV["SENDGRID_ADDRESS"],
   :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true

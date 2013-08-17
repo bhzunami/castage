@@ -64,6 +64,9 @@ GEM
     fancybox2-rails (0.2.4)
       railties (>= 3.1.0)
     ffi (1.9.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     hike (1.2.3)
     i18n (0.6.5)
     journey (1.0.4)
@@ -177,6 +180,7 @@ DEPENDENCIES
   factory_girl_rails (= 4.2.1)
   faker (= 1.1.2)
   fancybox2-rails (= 0.2.4)
+  figaro
   jquery-rails (= 2.0.2)
   jquery-ui-rails
   newrelic_rpm

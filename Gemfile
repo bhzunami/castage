@@ -22,6 +22,8 @@ gem "fancybox2-rails", "0.2.4"
 
 gem 'newrelic_rpm'
 
+gem 'figaro'
+
 gem 'state_machine'
 gem 'ruby-graphviz', :require => 'graphviz' # Optional: only required for graphing
 

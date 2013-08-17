@@ -80,7 +80,7 @@ class Booking < ActiveRecord::Base
   end
 
   def new_booking
-    #send_booking_confirmation
+    send_booking_confirmation
     send_booking_notification
   end
 
