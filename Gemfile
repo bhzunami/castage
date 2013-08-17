@@ -24,6 +24,8 @@ gem 'newrelic_rpm'
 
 gem 'figaro'
 
+gem "watu_table_builder", :require => "table_builder"
+
 gem 'state_machine'
 gem 'ruby-graphviz', :require => 'graphviz' # Optional: only required for graphing
 
