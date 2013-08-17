@@ -2,7 +2,7 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
     make_admin
-    make_user
+    #make_user
   end
 end
 

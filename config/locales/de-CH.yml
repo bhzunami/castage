@@ -203,4 +203,9 @@ de-CH:
       <<: *errors
   activerecord:
     errors:
+      models:
+        booking:
+          attributes:
+            zeitspanne: 
+              overlap: Das Haus ist in dieser Zeispanne schon vermietet.
       <<: *errors

@@ -1,1 +1,46 @@
-<%= @booking.name %>
+<% provide(:title, 'Reservation') %>
+<h1>Reservation Detail</h1>
+
+<div class="row">
+	<div class="span12">
+		<h2><%= (@booking.end_date - @booking.start_date).to_i %> Tage Hasliberg für <%= @booking.name %></h2>
+		<table>
+			<tr>
+				<td><strong>Email:</strong></td>
+				<td><%= @booking.email %></td>
+			</tr>
+			<tr>
+				<td><strong>Anz. Erwachsene</strong></td>
+				<td><%= @booking.adults %></td>
+			</tr>
+			<tr>
+				<td><strong>Anz. Kinder</strong></td>
+				<td><%= @booking.children %></td>
+			</tr>
+			<tr>
+				<td><strong>Auto</strong></td>
+				<td><%= @booking.with_car %></td>
+			</tr>
+			<tr>
+				<td><strong>Startdatum</strong></td>
+				<td><%= l @booking.start_date %></td>
+			</tr>
+			<tr>
+				<td><strong>End Datum</strong></td>
+				<td><%= l @booking.end_date %></td>
+			</tr>
+			<tr>
+				<td><strong>Bemerkungen</strong></td>
+				<td><%= @booking.note %></td>
+			</tr>
+		</table>
+		<p>
+		<% if @booking.state == "pending" %>
+		<%= link_to "Akzeptieren", booking_accept_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn-success", confirm: "Anfrage wirklich akzeptieren?", method: "post"} %>
+					<%= link_to "Ablehnen", booking_reject_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn btn-danger", confirm: "Anfrage wirklich ablehnen", method: "post"} %>
+		<% else %>
+			<%= link_to "Archivieren", booking_archive_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn-mini btn-info", confirm: "Anfrage wirklich archivieren?", method: "post"} %>
+		<% end %>
+	</p>
+	</div>
+</div>

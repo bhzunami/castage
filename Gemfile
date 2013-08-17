@@ -25,6 +25,11 @@ gem 'newrelic_rpm'
 gem 'state_machine'
 gem 'ruby-graphviz', :require => 'graphviz' # Optional: only required for graphing
 
+#gem "squeel"
+#gem 'validates_overlap'
+
+gem "range_validator", "~> 0.2.1"
+
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'

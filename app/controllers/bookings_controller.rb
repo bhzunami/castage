@@ -26,26 +26,40 @@ class BookingsController < ApplicationController
 		@booking = Booking.find_by_id(params[:id])
 	end
 
-
 	def accept
 		booking = Booking.find(params[:booking_id])
-		booking.accept
-		flash[:success] = "Anfrage von #{booking.name} wurde erfolgreich angenommen."
+		if booking.accept
+			flash[:success] = "Anfrage von #{booking.name} wurde erfolgreich angenommen."
+		else
+			booking.errors.full_messages.each do |msg|
+				flash[:error]= msg
+			end
+		end
 		redirect_to bookings_path
 	end
 
 	def reject
 		booking = Booking.find(params[:booking_id])
-		booking.reject
-		flash[:success] = "Anfrage von #{booking.name} wurde erfolgreich abgelehnt."
+		if booking.update_attribute(:state, "rejected")
+			flash[:success] = "Anfrage von #{booking.name} wurde erfolgreich abgelehnt."
+		else
+			booking.errors.full_messages.each do |msg|
+				flash[:error]= msg
+			end
+		end
 		redirect_to bookings_path
 	end
 
 	def archive
 		booking = Booking.find(params[:booking_id])
 		if booking.accepted? || booking.rejected?
-			booking.archive
-			flash[:success] = "Anfrage von #{booking.name} wurde erfolgreich archiviert."
+			if booking.update_attribute(:state, "archive")
+				flash[:success] = "Anfrage von #{booking.name} wurde erfolgreich archiviert."
+			else
+				booking.errors.full_messages.each do |msg|
+					flash[:error]= msg
+				end		
+			end
 			redirect_to bookings_path
 		end
 	end

@@ -43,6 +43,12 @@ class Booking < ActiveRecord::Base
   validates :end_date, presence: true
   validate :check_end_date
 
+  validates :zeitspanne, range: { not_overlapping: Proc.new{ Booking.where(state: :accepted) }}
+
+  def zeitspanne
+    self.start_date..self.end_date
+  end
+
   #State Machine
   state_machine :state, initial: :pending do
     event :accept do

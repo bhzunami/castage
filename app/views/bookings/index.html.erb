@@ -1,7 +1,7 @@
+<% provide(:title, 'Reservations') %>
 <h1>Reservationen</h1>
 
 <div class="row">
-	
 	<div class="span12">
 		<% if @bookings_new.any? %>
 		<h2>Neue Reservationen <%= @bookings_new.count %></h2>
@@ -39,11 +39,16 @@
 	
 	
 	<% else %>
-	<p> Keine neuen Anfragen <p>
+		<div class="alert alert-info">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+  		Keine neuen Anfragen
+		</div>
+	
 	<% end %>
 	</div>
 
 	<div class="span12">
+		<% if @bookings_accepted.any? %>
 		<h2>Akzeptierte Reservationen <%= @bookings_accepted.count %></h2>
 
 		<%= will_paginate @bookings_accepted, class: "pagination" %>
@@ -69,17 +74,22 @@
 				<td><%= l booking_accepted.end_date %></td>
 				<td><%= booking_accepted.adults + booking_accepted.children %></td>
 				<td><%= l booking_accepted.updated_at.to_date %></td>
-
 				<td> <%= link_to "Archivieren", booking_archive_path(booking_accepted, booking_id: booking_accepted.id), { method: :delete, class: "btn btn-mini btn-info", confirm: "Anfrage wirklich archivieren?", method: "post"} %></td>
 			</tr>
 			<% end %>
 			</tbody>
 		</table>
-	
+		<% else %>
+		<div class="alert alert-info">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+  		Keine akzeptierten Anfragen
+		</div>
+	<% end %>
 	</div>
 
-	<% if @bookings_rejected.any? %>
+	
 	<div class="span12">
+		<% if @bookings_rejected.any? %>
 		<h2>Abgelehnte Reservationen <%= @bookings_rejected.count %></h2>
 
 		<%= will_paginate @bookings_rejected, class: "pagination" %>
@@ -110,9 +120,11 @@
 			<% end %>
 			</tbody>
 		</table>
-	
-	</div>
+		<% else %>
+		<div class="alert alert-info">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+  		Keine abgelehnten Anfragen
+		</div>
 	<% end %>
-
-
+	</div>
 </div>
