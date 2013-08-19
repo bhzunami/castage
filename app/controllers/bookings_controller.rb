@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 	before_filter :signed_in_user, only: [:index, :show]
 
 	def create
+		setup
 		@booking = Booking.new(params[:booking])
 		if @booking.save
 			@booking.new_booking
@@ -15,13 +16,8 @@ class BookingsController < ApplicationController
 	def new
 		@images = get_images
   	@booking = Booking.new
-  	get_reserved_dates
-  	@date = params[:month] ? Date.parse(params[:month]) : Date.today
-  	if(params.has_key?(:month) )
-  		cookies[:date_changer] = true
-  	else
-  		cookies.delete(:date_changer)
-  	end
+  	setup
+  	
 	end
 
 	def index
@@ -32,6 +28,7 @@ class BookingsController < ApplicationController
 
 	def show
 		@booking = Booking.find_by_id(params[:id])
+		get_reserved_dates
 	end
 
 	def accept
@@ -74,6 +71,16 @@ class BookingsController < ApplicationController
 
 #-------------------------------
 	private
+
+	def setup
+		get_reserved_dates
+  	@date = params[:month] ? Date.parse(params[:month]) : Date.today
+  	if(params.has_key?(:month) )
+  		cookies[:date_changer] = true
+  	else
+  		cookies.delete(:date_changer)
+  	end
+	end
 
 		def get_images
 			@images = []

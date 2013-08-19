@@ -33,6 +33,7 @@ $('.smooth_anker').click(function(e){
   });
 
 if ($.cookie('date_changer')) {
+  $.removeCookie('date_changer');
   location.hash = "#availability";
 }
 

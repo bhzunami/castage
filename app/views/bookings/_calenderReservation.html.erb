@@ -12,34 +12,15 @@
 	</div>
 	<p></p><br />
 
-	  <div class="span4">
-			<%= calendar(:year => year_now, :month => month_now, :first_day_of_week => 1) do |d|
-				if @dates_test.include?(d)
-					[d.mday, {:class => "specialDay"}]
-				else
-					[d.mday, {:class => "normalDay"}]
-				end
-  		end %>
-		</div>
-
+	<% 3.times do |i| %>
 		<div class="span4">
-			<%= calendar(:year => year_next, :month => month_next, :first_day_of_week => 1) do |d|
+			<%= calendar(year: booking_new_calculateDate(@date, i).year, month: booking_new_calculateDate(@date, i).month, first_day_of_week: 1) do |d|
 				if @dates_test.include?(d)
-					[d.mday, {:class => "specialDay"}]
+					[d.mday, {class: "reserved_day"}]
 				else
-					[d.mday, {:class => "normalDay"}]
+					[d.mday, {class: "free_day"}]
 				end
   		end %>
 		</div>
-
-		<div class="span4">
-			<%= calendar(:year => year_next_next, :month => month_next_next, :first_day_of_week => 1) do |d|
-				if @dates_test.include?(d)
-					[d.mday, {:class => "specialDay"}]
-				else
-					[d.mday, {:class => "normalDay"}]
-				end
-  		end %>
-		</div>
-
+	<% end %>
 </div>

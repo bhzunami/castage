@@ -291,10 +291,10 @@ input {
 
 }
 
+/* CALENDAR */
 
 .monthName th {
   font-weight: normal;
-  text-align: right;
   padding-top: 1em;
   padding-bottom: 0.7em;
 }
@@ -306,7 +306,7 @@ input {
   color: black;
 }
 
-.otherMonth, .day, .specialDay, .normalDay {
+.otherMonth, .reserved_day, .free_day, .new_reservation_day, .conflict_day {
   padding: 0.7em 1em;
   border-right: 1px solid white;
   width: 25px;
@@ -318,13 +318,16 @@ input {
   color: #eeeeee;
 }
 
+.new_reservation_day {
+  background-color: #58FA82;
+}
 
-.specialDay {
+.conflict_day { 
+  background-color: #F4FA58;
+
+}
+
+.reserved_day {
   background-color: #FA5858;
   color: white;
 }
-
-.weekNumber {
-  background-color: #dedede;
-}
-

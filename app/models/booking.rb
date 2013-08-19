@@ -37,16 +37,18 @@ class Booking < ActiveRecord::Base
   validates :adults, :numericality => { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 6 }
   validates :children, :numericality => { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 6 }
 
-  validates :start_date, presence: true
+  #validates :start_date, presence: true
   validate :check_start_date
+  validates_presence_of :start_date
 
   validates :end_date, presence: true
   validate :check_end_date
 
   validates :zeitspanne, range: { not_overlapping: Proc.new{ Booking.where(state: :accepted) }}
+  #after_validation { self.errors.messages.delete(:zeitspanne) }
 
   def zeitspanne
-    self.start_date..self.end_date
+    self.start_date..self.end_date unless self.start_date.nil? || self.end_date.nil?
   end
 
   #State Machine

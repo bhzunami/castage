@@ -1,9 +1,12 @@
 <% provide(:title, 'Reservation') %>
 <h1>Reservation Detail</h1>
 
+<%= render 'shared/error_messages', object: @booking unless @booking.valid? %> 
+<h2><%= (@booking.end_date - @booking.start_date).to_i %> Tage Hasliberg für <%= @booking.name %></h2>
+
 <div class="row">
-	<div class="span12">
-		<h2><%= (@booking.end_date - @booking.start_date).to_i %> Tage Hasliberg für <%= @booking.name %></h2>
+	<div class="span4">
+		
 		<table>
 			<tr>
 				<td><strong>Email:</strong></td>
@@ -34,13 +37,36 @@
 				<td><%= @booking.note %></td>
 			</tr>
 		</table>
-		<p>
-		<% if @booking.state == "pending" %>
-		<%= link_to "Akzeptieren", booking_accept_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn-success", confirm: "Anfrage wirklich akzeptieren?", method: "post"} %>
-					<%= link_to "Ablehnen", booking_reject_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn btn-danger", confirm: "Anfrage wirklich ablehnen", method: "post"} %>
-		<% else %>
-			<%= link_to "Archivieren", booking_archive_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn-mini btn-info", confirm: "Anfrage wirklich archivieren?", method: "post"} %>
-		<% end %>
-	</p>
+
 	</div>
+
+	<div class="span8">
+		<% 2.times do |i| %>
+			<% if i == 0 %>
+				<div class="span3">
+			<% else %>
+				<div class="span3 offset1">
+			<% end %>
+			<%= calendar(year: booking_show_calculateDate(@booking.start_date, i).year, month: booking_show_calculateDate(@booking.start_date, i).month, first_day_of_week: 1) do |d|
+				if @dates_test.include?(d) && booking_show_newDates(@booking).include?(d)
+					[d.mday, {:class => "conflict_day"}]
+				elsif @dates_test.include?(d)
+					[d.mday, {:class => "reserved_day"}]
+				elsif booking_show_newDates(@booking).include?(d)
+					[d.mday, {:class => "new_reservation_day"}]
+				else
+					[d.mday, {:class => "free_day"}]
+				end
+			end %>
+		</div>
+		<% end %>
+	</div>
+	<p>
+	<% if @booking.state == "pending" %>
+		<%= link_to "Akzeptieren", booking_accept_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn-success", confirm: "Anfrage wirklich akzeptieren?", method: "post"} %>
+		<%= link_to "Ablehnen", booking_reject_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn btn-danger", confirm: "Anfrage wirklich ablehnen", method: "post"} %>
+	<% else %>
+		<%= link_to "Archivieren", booking_archive_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn-mini btn-info", confirm: "Anfrage wirklich archivieren?", method: "post"} %>
+	<% end %>
+	</p>
 </div>
