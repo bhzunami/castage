@@ -207,5 +207,6 @@ de-CH:
         booking:
           attributes:
             zeitspanne: 
-              overlap: Das Haus ist in dieser Zeispanne schon vermietet.
+              overlap: Das Haus ist in dieser Zeit schon vermietet.
+              not_a_range: Kein korrektes Start- und Enddatum.
       <<: *errors

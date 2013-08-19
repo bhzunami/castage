@@ -10,10 +10,11 @@
           <% if signed_in? %>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Konto <b class="caret"></b>
+                <%= current_user.name %> <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Reservationen", bookings_path %></li>
+                <li><%= link_to "Archivierte Reservationen", archived_bookings_path %></li>
                 <li class="divider"></li>
                 <li><%= link_to "Profil bearbeiten", edit_user_path(current_user) %></li>
                 <li><%= link_to "Alle Benutzer", users_path %></li>

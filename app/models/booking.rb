@@ -37,15 +37,16 @@ class Booking < ActiveRecord::Base
   validates :adults, :numericality => { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 6 }
   validates :children, :numericality => { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 6 }
 
-  #validates :start_date, presence: true
+  validates :start_date, presence: true
   validate :check_start_date
-  validates_presence_of :start_date
+  #validates_presence_of :start_date
 
   validates :end_date, presence: true
   validate :check_end_date
 
-  validates :zeitspanne, range: { not_overlapping: Proc.new{ Booking.where(state: :accepted) }}
-  #after_validation { self.errors.messages.delete(:zeitspanne) }
+  validates :zeitspanne, range: { not_overlapping: Proc.new{ Booking.where(state: :accepted) }}, if: (:start_date? && :end_date?)
+
+
 
   def zeitspanne
     self.start_date..self.end_date unless self.start_date.nil? || self.end_date.nil?
@@ -95,12 +96,6 @@ class Booking < ActiveRecord::Base
     BookingMailer.booking_notification(self).deliver
   end
 
-  def accept_booking(booking)
-    throw "Kein Anfrage" unless booking.instance_of? Booking
-    self.transaction do
-      booking.accept
-    end
-  end
 
   # Public Methos
   #----------------------------------------
@@ -111,8 +106,8 @@ class Booking < ActiveRecord::Base
   end
 
   def check_end_date
-    if self.end_date != nil
-      errors.add(:end_date, 'muss grösser sein als Startdatum') unless self.start_date < self.end_date
+    if self.end_date != nil && self.start_date != nil
+      errors.add(:end_date, 'muss grösser sein als das Startdatum') unless self.start_date < self.end_date
     end
   end
 

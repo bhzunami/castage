@@ -31,6 +31,10 @@ class BookingsController < ApplicationController
 		get_reserved_dates
 	end
 
+	def archived_bookings
+		@bookings = Booking.with_state(:archive).paginate(:page => params[:page])
+	end
+
 	def accept
 		booking = Booking.find(params[:booking_id])
 		if booking.accept

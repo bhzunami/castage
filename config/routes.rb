@@ -13,9 +13,12 @@ Castage::Application.routes.draw do
 
   root to: 'static_pages#home'
 
+#static pages
   match '/property_description', to: 'static_pages#property_description'
   match '/contact',              to: 'static_pages#contact'
+  match '/archived_bookings',    to: 'bookings#archived_bookings'
 
+# Login
   match '/login',  to: 'sessions#new',         via: 'get'
   match '/logout', to: 'sessions#destroy',     via: 'delete'
 

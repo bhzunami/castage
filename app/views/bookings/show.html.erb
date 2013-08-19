@@ -65,7 +65,7 @@
 	<% if @booking.state == "pending" %>
 		<%= link_to "Akzeptieren", booking_accept_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn-success", confirm: "Anfrage wirklich akzeptieren?", method: "post"} %>
 		<%= link_to "Ablehnen", booking_reject_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn btn-danger", confirm: "Anfrage wirklich ablehnen", method: "post"} %>
-	<% else %>
+	<% elsif @booking.state == "rejected" || @booking.state == "accepted" %>
 		<%= link_to "Archivieren", booking_archive_path(@booking, booking_id: @booking.id), { method: :delete, class: "btn btn-mini btn-info", confirm: "Anfrage wirklich archivieren?", method: "post"} %>
 	<% end %>
 	</p>

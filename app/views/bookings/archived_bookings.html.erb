@@ -1,0 +1,37 @@
+<% provide(:title, 'Archivierte Reservations') %>
+<h1>Archivierte Reservationen</h1>
+
+<div class="row">
+	<div class="span12">
+		<% if @bookings.any? %>
+		<%= will_paginate @bookings, class: "pagination" %>
+
+		<table class="table table-striped table-condensed">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>E-Mail</th>
+					<th>Vom</th>
+					<th>Bis</th>
+					<th>Anz. Personen</th>
+					<th>Anfrage am</th>
+					<th>Archiviert am</th>
+				</tr>
+			</thead>
+			<tbody>
+			<% @bookings.each do |booking| %>
+			<tr>
+				<td><%= link_to booking.name, booking %> </td>
+				<td><%= booking.email %></td>
+				<td><%= l booking.start_date %></td>
+				<td><%= l booking.end_date %></td>
+				<td><%= booking.adults + booking.children %></td>
+				<td><%= l booking.created_at.to_date %></td>
+				<td><%= l booking.updated_at.to_date %></td>
+			</tr>
+			<% end %>
+			</tbody>
+		</table>
+		<% end %>
+	</div>
+</div>
