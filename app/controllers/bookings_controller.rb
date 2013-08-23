@@ -102,7 +102,6 @@ class BookingsController < ApplicationController
 				days.times do |i|
 					@dates_test << b.start_date + i
 				end
-				@dates_test << b.end_date
 			end
 			return @dates_test
 

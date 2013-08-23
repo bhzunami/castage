@@ -1,16 +1,19 @@
-<div class="container">
-<div id="slideShow" class="carousel slide">
+<% if @images %>
+  <div class="container">
+  <div id="slideShow" class="carousel slide">
   <div class="carousel-inner">
-
     <% @images.each_with_index do | image, i | %>
     <div class="item <%= "active"  if i == 0 %>">
       <%= image_tag(image[:url], alt: image[:alt]) %>
-      <div class="container">
-        <div class="carousel-caption">
-          <h1><%= image[:title] %></h1>
-          <p class="lead"><%= image[:description] %></p>
+      <!-- Check if there is an title with description -->
+      <% if image[:title] %>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1><%= image[:title] %></h1>
+            <p class="lead"><%= image[:description] %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
     <% end %>
 
@@ -19,4 +22,6 @@
   <a class="right carousel-control" href="#slideShow" data-slide="next">&rsaquo;</a>
 </div>
 </div>
+
+<% end %>
   <!-- /.carousel -->

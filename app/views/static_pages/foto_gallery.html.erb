@@ -1,0 +1,4 @@
+<h1>Foto Galerie</h1>
+<% @categories.each do |categorie| %>
+	<%= link_to categorie.split('/').last, category: categorie.split('/').last %>
+<% end %>

@@ -34,6 +34,6 @@ module BookingsHelper
     days.times do |i|
       new_reservationDates << booking.start_date + i
     end
-    new_reservationDates << booking.end_date
+    new_reservationDates
   end
 end

@@ -16,6 +16,7 @@ Castage::Application.routes.draw do
 #static pages
   match '/property_description', to: 'static_pages#property_description'
   match '/contact',              to: 'static_pages#contact'
+  match '/gallery',              to: 'static_pages#foto_gallery'
   match '/archived_bookings',    to: 'bookings#archived_bookings'
 
 # Login

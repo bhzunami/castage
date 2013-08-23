@@ -4,11 +4,9 @@ class StaticPagesController < ApplicationController
 
   def home
   	@images = []
-  	@images << { url: 'Haus1.jpg', alt: 'IMAGE1', title: 'Willkommen', 
-  				description: "Willkommen auf der Weissenfluh. Geniessen sie Ihre Ferien in Ruhe in einem gemütlichen Chalet mitten im Haslitall mit einer grandiosen Aussicht auf den See."} 
-  	@images << { url: 'Haus2.jpg', alt: 'IMAGE2', title: 'Natur erleben',
-  				description: 'Geniessen sie die Natur und die freie Landluft.'} 
-  	@images << { url: 'img_3.jpg', alt: 'IMAGE3', title: 'Title Bild 3'} 
+  	@images << { url: 'Haus1.jpg', alt: 'IMAGE1'} 
+  	@images << { url: 'Haus2.jpg', alt: 'IMAGE2'} 
+  	@images << { url: 'img_3.jpg', alt: 'IMAGE3'} 
 
     @home_pictures = []
     #Dir.new("app/assets/images/home").entries.each do |f| @home_pictures.push(f) if File.file?(File.absolute_path(f,d) ) end
@@ -24,11 +22,16 @@ class StaticPagesController < ApplicationController
   				description: 'Entspannen Sie sich vor einem knisternden, warmen Chminee, in einer kuscheligen Stube.'} 
   end
 
-  def asdf
-  	@images = []
-  	@images << { url: 'Haus1.jpg', alt: 'IMAGE1', title: 'Kontakt', description: 'More Bla bli blu for the description of the picutre. Should be a little bit more bla bli blu'} 
-  	@images << { url: 'Haus2.jpg', alt: 'IMAGE2', title: 'Title Bild 2'} 
-  	@images << { url: 'img_3.jpg', alt: 'IMAGE3', title: 'Title Bild 3'}
+  def foto_gallery
+    @categories = Dir.glob("app/assets/images/gallery/*")
+    @category_path = params[:category]
+    if @category_path
+      @gallery_images = Dir.glob("app/assets/images/gallery/#{@category_path}/*")
+      render 'show_images'
+    end
+  end
+
+  def show_images
   end
   
 end

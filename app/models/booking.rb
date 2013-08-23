@@ -46,7 +46,7 @@ class Booking < ActiveRecord::Base
 
   validates :zeitspanne, range: { not_overlapping: Proc.new{ Booking.where(state: :accepted) }}, if: (:start_date? && :end_date?)
 
-
+# https://makandracards.com/makandra/984-test-if-two-date-ranges-overlap-in-ruby-or-rails
 
   def zeitspanne
     self.start_date..self.end_date unless self.start_date.nil? || self.end_date.nil?
@@ -107,7 +107,7 @@ class Booking < ActiveRecord::Base
 
   def check_end_date
     if self.end_date != nil && self.start_date != nil
-      errors.add(:end_date, 'muss grösser sein als das Startdatum') unless self.start_date < self.end_date
+      errors.add(:end_date, 'muss mind 7 Nächte grösser sein als das Startdatum') unless self.start_date < self.end_date && self.start_date + 7 <= self.end_date
     end
   end
 
