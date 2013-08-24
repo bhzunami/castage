@@ -1,6 +1,6 @@
 module StaticPagesHelper
 
-	def image_path(image)
+	def get_image_path(image)
 		"gallery/#{@category_path}/#{image.split('/').last}"
 	end
 
@@ -18,11 +18,11 @@ module StaticPagesHelper
 	end
 
 	def get_original(image)
-		image_path(image).gsub!(/_([a-z]+).jpg/, '_og.jpg')
+		get_image_path(image).gsub!(/_([a-z]+).jpg/, '_og.jpg')
 	end
 
 	def get_image_name(image)
-		image = image_path(image).gsub!(/_([a-z]+).jpg/, '')
+		image = get_image_path(image).gsub!(/_([a-z]+).jpg/, '')
 		File.basename(image, 'jpg')
 	end
 end

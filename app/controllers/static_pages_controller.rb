@@ -6,9 +6,8 @@ class StaticPagesController < ApplicationController
   	@images = []
   	@images << { url: 'Haus1.jpg', alt: 'IMAGE1'} 
   	@images << { url: 'Haus2.jpg', alt: 'IMAGE2'} 
-  	@images << { url: 'img_3.jpg', alt: 'IMAGE3'} 
+    @images << { url: 'img_3.jpg', alt: 'IMAGE3'} 
 
-    @home_pictures = []
     #Dir.new("app/assets/images/home").entries.each do |f| @home_pictures.push(f) if File.file?(File.absolute_path(f,d) ) end
   end
 

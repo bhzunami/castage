@@ -7,6 +7,7 @@
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Objektbeschreibung",    property_description_path %></li>
           <li><%= link_to "Reservation", new_booking_path %></li>
+          <li><%= link_to "Fotogalerie", gallery_path %></li>
           <% if signed_in? %>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
