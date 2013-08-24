@@ -1,4 +1,11 @@
 <h1>Foto Galerie</h1>
+<p class="lead">Sehen sie ein paar Fotos an</p>
+<table class="galleryCategory_table">
+		<tr>
 <% @categories.each do |categorie| %>
-	<%= link_to categorie.split('/').last, category: categorie.split('/').last %>
+		<td><%= link_to category_name(categorie), category: category_name(categorie) %>
+			<%= image_tag(category_image(category_name(categorie))) %>
+		</td>
 <% end %>
+	<tr>
+</table>

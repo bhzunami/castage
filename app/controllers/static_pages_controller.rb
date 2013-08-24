@@ -26,7 +26,7 @@ class StaticPagesController < ApplicationController
     @categories = Dir.glob("app/assets/images/gallery/*")
     @category_path = params[:category]
     if @category_path
-      @gallery_images = Dir.glob("app/assets/images/gallery/#{@category_path}/*")
+      @gallery_images = Dir.glob("app/assets/images/gallery/#{@category_path}/*_tb*")
       render 'show_images'
     end
   end
