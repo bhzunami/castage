@@ -1,11 +1,18 @@
 <h1>Foto Galerie</h1>
 <p class="lead">Sehen sie ein paar Fotos an</p>
-<table class="galleryCategory_table">
-		<tr>
-<% @categories.each do |categorie| %>
-		<td><%= link_to category_name(categorie), category: category_name(categorie) %>
-			<%= image_tag(category_image(category_name(categorie))) %>
-		</td>
+
+<% @categories.in_groups_of(4, false) do |category_line| %>
+	<div class="row-fluid">
+		<% category_line.each do |category| %>
+				<div class="category-box span3 row-fluid">
+					<%= link_to image_tag(category_image(category_name(category))),	category: category_name(category) %>
+  				<div class="span12 description">
+  					<h2><%= category_name(category)%></h2>
+  				</div>
+
+				</div>
+
+			
+		<% end %>
+	</div>
 <% end %>
-	<tr>
-</table>
