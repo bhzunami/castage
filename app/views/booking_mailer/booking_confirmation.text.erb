@@ -1,16 +1,11 @@
 <%= "Sehr geehrte/r #{@booking.name}" %>
 
-Vielen Dank für Ihre Anfrage. Wir werden sie so rasch als möglich bearbeiten und Ihnen beschied geben.
+Vielen Dank für Ihre Anfrage. Wir werden sie so rasch als möglich bearbeiten und Ihnen Bescheid geben.
 
-<% if @booking.with_car %>
-Sie kommen mit einem Fahrzeug. Bitte parken Sie nur auf dem vorgesehenen Parkplatz.
-<% else %>
-Sie kommen ohne Auto. Fahrplan für den Bus finden Sie unter
 
-http://www.fahrplanfelder.ch/fileadmin/fap_pdf_fields/2013/31.151.pdf
-<% end %>
 
 Feriendauer: <%= (@booking.end_date - @booking.start_date).to_i %> Nächte.
+
 
 Ihre eingegebenen Daten:
 
@@ -29,4 +24,4 @@ Bemerkungen: <%= @booking.note %>
 
 Mit freundlichen Grüssen
 
-Ferienhaus Weissenfluh
+Ferienhaus vor Weissenfluh

@@ -7,9 +7,6 @@ Castage::Application.routes.draw do
     post "reject"
     post "archive"
   end
-  #get "static_pages/home"
-  #get "static_pages/property_description"
-  #get "static_pages/reservation"
 
   root to: 'static_pages#home'
 
