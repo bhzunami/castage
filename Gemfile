@@ -34,6 +34,8 @@ gem 'ruby-graphviz', :require => 'graphviz' # Optional: only required for graphi
 
 gem "range_validator", "~> 0.2.1"
 
+#gem 'validates_overlap', git: 'git://github.com/robinbortlik/validates_overlap.git'
+
 
 gem "calendar_helper", "~> 0.2.6"
 group :development, :test do

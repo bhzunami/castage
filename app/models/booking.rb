@@ -44,12 +44,15 @@ class Booking < ActiveRecord::Base
   validates :end_date, presence: true
   validate :check_end_date
 
+
+  #scope :accepted, where(:state => "accepted")
+  #validates :start_date, :end_date, overlap: { scope: Proc.new{ Booking.where(state: :accepted) }}
+
   validates :zeitspanne, range: { not_overlapping: Proc.new{ Booking.where(state: :accepted) }}, if: (:start_date? && :end_date?)
 
-# https://makandracards.com/makandra/984-test-if-two-date-ranges-overlap-in-ruby-or-rails
-
+# The zeitspanne have to be -1 because it is possible that the end_date can also be a start date
   def zeitspanne
-    self.start_date..self.end_date unless self.start_date.nil? || self.end_date.nil?
+    self.start_date..self.end_date-1 unless self.start_date.nil? || self.end_date.nil?
   end
 
   #State Machine
