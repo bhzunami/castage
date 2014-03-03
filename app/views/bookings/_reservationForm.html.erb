@@ -10,17 +10,14 @@
   <p class="lead">Für eine Anfrage füllen Sie bitte folgendes Formular aus.</p>
 
     <div class="reservation_new">
-  <div class="form-horizontal">
-    <div class="row">
-
-      <%= simple_form_for(@booking) do |f| %>
-
-      <%= render 'fields', f: f %>
+      <div class="form-horizontal">
+      <div class="row">
+        <%= simple_form_for(@booking) do |f| %>
+          <%= render 'fields', f: f %>
+      </div>
+      <div class="span3 offset1">
+      <%= f.submit "Anfragen", class: "btn btn-large btn-primary" %>
     </div>
-    <div class="span3 offset1">
-    <%= f.submit "Anfragen", class: "btn btn-large btn-primary" %>
-</div>
-
   <% end %>
   </div>
 </div>

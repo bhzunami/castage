@@ -2,13 +2,13 @@
 
 <div class="row">
 	<div class="span1">
-			<%= link_to "<-Zurück", month: (@date.beginning_of_month-1).strftime("%Y-%m-01") %>
+			<%= link_to "<-Zurück", month: (@date.beginning_of_month-3.month).strftime("%Y-%m-01") %>
 		</div>
 		<div class="span1 offset5">
 			<%= link_to "Heute", :month => (Date.today).strftime("%Y-%m-01") %>
 		</div>
 			<div class="span1 offset4">
-			 <%= link_to "Vorwärts->", :month => (@date.end_of_month+1).strftime("%Y-%m-01") %>
+			 <%= link_to "Vorwärts->", :month => (@date.end_of_month+3.month).strftime("%Y-%m-01") %>
 	</div>
 	<p></p><br />
 

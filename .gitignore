@@ -19,6 +19,7 @@ pickle-email-*.html
 *.out
 doc/Castage_Docu.log
 original_files
+newrelic.yml
 
 # Ignore application configuration
 /config/application.yml

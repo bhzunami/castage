@@ -22,8 +22,10 @@ gem "fancybox2-rails", "0.2.4"
 
 gem 'newrelic_rpm'
 
+# hide configurations file
 gem 'figaro'
 
+# Set cookie for scrolling down
 gem "jquery-cookie-rails", "~> 1.3.1"
 
 gem 'state_machine'
