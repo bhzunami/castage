@@ -13,12 +13,12 @@ class StaticPagesController < ApplicationController
 
   def property_description
   	@images = []
-  	@images << { url: 'Haus1.jpg', alt: 'IMAGE1', title: 'Haus', 
-  				description: ' Gemuütliches und gut eingerichtetes 4-Zimmer-Chalet an ruhiger Lage mit wunderbarer Aussicht ins Haslital.'} 
-  	@images << { url: 'Haus2.jpg', alt: 'IMAGE2', title: 'Als Famile',
-  				description: 'Geniessen Sie die Zeit als Familie. Mit bis zu 6 Schlafmöglichkeiten ist das Haus auch fuer eine Grossfamilie bestens geeignet.'} 
+  	@images << { url: 'Haus1.jpg', title: 'Haus', 
+  				description: ' Gemütliches und gut eingerichtetes 4-Zimmer-Chalet an ruhiger Lage mit wunderbarer Aussicht ins Haslital.'} 
+  	@images << { url: 'Haus2.jpg', alt: 'IMAGE2', title: 'Als Familie',
+  				description: 'Mit bis zu 6 Schlafmöglichkeiten ist das Haus auch für eine Grossfamilie bestens geeignet.'} 
   	@images << { url: 'img_3.jpg', alt: 'IMAGE3', title: 'Romantische Abende',
-  				description: 'Entspannen Sie sich vor einem knisternden, warmen Chminee, in einer kuscheligen Stube.'} 
+  				description: 'Entspannen Sie sich vor einem knisternden, warmen Cheminee, in einer kuscheligen Stube.'} 
   end
 
   def foto_gallery

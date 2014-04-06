@@ -5,12 +5,9 @@
 		<% image_line.each do |image| %>
 			<div class="image-box span2 row-fluid">
 				<div class="span12 row-fluid">
-					<a class="fancybox" href="<%= image_path(get_original(image)) %>" rel="gallery" title="<%= get_image_name(image) %>">
+					<a class="fancybox" href="<%= image_path(get_original(image)) %>" rel="gallery" title="">
   				<%= image_tag(get_image_path(image)) %>
   				</a>
-  				<div class="span12 description">
-  					<%= get_image_name(image) %>
-  				</div>
 				</div>
 			</div>
 		<% end %>
