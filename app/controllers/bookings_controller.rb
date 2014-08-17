@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-	before_filter :signed_in_user, only: [:index, :show]
+	before_filter :signed_in_user, only: [:index, :show, :simple_booking_new]
 
 	def create
 		setup
@@ -12,6 +12,30 @@ class BookingsController < ApplicationController
 			render 'new'
 		end
 	end
+
+	def simple_booking_new
+		@booking = Booking.new
+		render 'simple_booking_new'
+	end
+
+	def simple_booking_create
+		@booking = Booking.new(params[:booking])
+		@booking.email = 'karinknoell@yahoo.de'
+		@booking.name = 'Familie Knöll'
+		@booking.adults = 2
+		@booking.children = 3
+		puts @booking
+		if @booking.save
+			@booking.accept
+			flash[:success] = "Buchung erfolgreich"
+			redirect_to bookings_path
+		else 
+			flash[:error] = "Buchung konnte nicht gemacht werden"
+			render 'simple_booking_new'
+		end
+	
+	end
+
 
 	def new
 		@images = get_images

@@ -10,6 +10,9 @@ Castage::Application.routes.draw do
 
   root to: 'static_pages#home'
 
+  #get '/bookings/simple_booking_new', to: 'bookings#new'
+  match '/simple_booking', to: 'bookings#simple_booking_new', via: 'get'
+  post '/simple_booking', to: 'bookings#simple_booking_create'
 #static pages
   match '/property_description', to: 'static_pages#property_description'
   match '/contact',              to: 'static_pages#contact'

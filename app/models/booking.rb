@@ -109,6 +109,10 @@ class Booking < ActiveRecord::Base
   end
 
   def check_end_date
+    # Family Knöll does not have to book 7 days
+    if self.email == 'karinknoell@yahoo.de' && self.name == 'Familie Knöll'
+      return true
+    end
     if self.end_date != nil && self.start_date != nil
       errors.add(:end_date, 'muss mind 7 Nächte grösser sein als das Startdatum') unless self.start_date < self.end_date && self.start_date + 7 <= self.end_date
     end

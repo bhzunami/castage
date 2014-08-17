@@ -13,6 +13,6 @@ class BookingMailer < ActionMailer::Base
 
   def booking_notification(booking)
     @booking = booking
-    mail to: "nmauchle@gmail.com", subject: "neue Buchung"
+    mail to: "karinknoell@yahoo.de", subject: "Neue Buchungsanfrage"
   end
 end
