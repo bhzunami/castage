@@ -1,12 +1,12 @@
 class BookingsController < ApplicationController
-	before_filter :signed_in_user, only: [:index, :show, :simple_booking_new]
+	before_filter :signed_in_user, only: [:index, :show, :simple_booking_new, :edit]
 
 	def create
 		setup
 		@booking = Booking.new(params[:booking])
 		if @booking.save
 			@booking.new_booking
-			flash[:success] = "Buchung erfolgreich"
+			flash[:success] = "Vielen Dankf für Ihre Anfrage"
 			redirect_to new_booking_url
 		else
 			render 'new'
@@ -36,6 +36,20 @@ class BookingsController < ApplicationController
 	
 	end
 
+	def edit
+		@booking = Booking.find_by_id(params[:id])
+	end
+
+	def update
+		@booking = Booking.find_by_id(params[:id])
+		if @booking.update_attributes(params[:booking])
+			flash[:success] = "Anfrage erfolgreich gespeichert"
+			redirect_to bookings_path
+		else
+			flash[:error] = "Anfrage konnte nicht gändert werden"
+			render 'edit'
+		end
+	end
 
 	def new
 		@images = get_images

@@ -2,7 +2,7 @@ Castage::Application.routes.draw do
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :bookings, only: [:new, :create, :show, :index] do
+  resources :bookings, only: [:new, :create, :show, :index, :edit, :update] do
     post "accept"
     post "reject"
     post "archive"

@@ -1,0 +1,13 @@
+<h1>Anfrage bearbeiten</h1>
+<div class="reservation_new">
+      <div class="form-horizontal">
+      <div class="row">
+        <%= simple_form_for(@booking) do |f| %>
+          <%= render 'fields', f: f %>
+      </div>
+      <div class="span3 offset1">
+      <%= f.submit "Speichern", class: "btn btn-large btn-primary" %>
+    </div>
+  <% end %>
+  </div>
+</div>

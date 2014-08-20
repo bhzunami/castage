@@ -74,7 +74,11 @@
 				<td><%= l booking_accepted.end_date %></td>
 				<td><%= booking_accepted.adults + booking_accepted.children %></td>
 				<td><%= l booking_accepted.updated_at.to_date %></td>
-				<td> <%= link_to "Archivieren", booking_archive_path(booking_accepted, booking_id: booking_accepted.id), { method: :delete, class: "btn btn-mini btn-info", confirm: "Anfrage wirklich archivieren?", method: "post"} %></td>
+				<td> <%= link_to "Archivieren", booking_archive_path(booking_accepted, booking_id: booking_accepted.id), { method: :delete, class: "btn btn-mini btn-info", confirm: "Anfrage wirklich archivieren?", method: "post"} %>
+					<% if !booking_accepted.start_date.past? %>
+						<%= link_to "Edit", edit_booking_path(booking_accepted.id), {class: "btn btn-mini"} %>
+					<% end %>
+				</td>
 			</tr>
 			<% end %>
 			</tbody>
