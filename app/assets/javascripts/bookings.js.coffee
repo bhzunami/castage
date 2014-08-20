@@ -33,9 +33,13 @@ $ ->
 
 	unless $("#booking_end_date").val() is ''
 		end_date_as_array = $("#booking_end_date").val().split(" ")
+		console.log(end_date_as_array)
 		year = end_date_as_array[2]
+		console.log(year)
 		month = months[end_date_as_array[1]]
+		console.log(month)
 		day = end_date_as_array[0]
+		console.log(day)
 		end_date = new Date(year, month, day, null, null, null, null)
 		$("#booking_end_date").val $.datepicker.formatDate("dd/mm/yy", end_date)
 
