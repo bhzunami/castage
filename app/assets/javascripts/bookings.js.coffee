@@ -20,7 +20,7 @@ $ ->
 	$("#booking_end_date").datepicker dateFormat: "dd/mm/yy"
 
 	unless $("#booking_start_date").val() is ''
-		start_date_as_array = $("#booking_start_date").val().split(" ")
+		start_date_as_array = $("#booking_start_date").val().split(/[ ,]+/)
 		console.log(start_date_as_array)
 		year = start_date_as_array[2]
 		console.log(year)
@@ -32,7 +32,7 @@ $ ->
 		$("#booking_start_date").val $.datepicker.formatDate("dd/mm/yy", start_date)
 
 	unless $("#booking_end_date").val() is ''
-		end_date_as_array = $("#booking_end_date").val().split(" ")
+		end_date_as_array = $("#booking_end_date").val().split(/[ ,]+/)
 		console.log(end_date_as_array)
 		year = end_date_as_array[2]
 		console.log(year)
