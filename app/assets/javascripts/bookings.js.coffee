@@ -21,9 +21,13 @@ $ ->
 
 	unless $("#booking_start_date").val() is ''
 		start_date_as_array = $("#booking_start_date").val().split(" ")
+		console.log(start_date_as_array)
 		year = start_date_as_array[3]
+		console.log(year)
 		month = months[start_date_as_array[2]]
+		console.log(month)
 		day = start_date_as_array[1]
+		console.log(day)
 		start_date = new Date(year, month, day, null, null, null, null)
 		$("#booking_start_date").val $.datepicker.formatDate("dd/mm/yy", start_date)
 
