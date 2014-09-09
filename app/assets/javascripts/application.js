@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.cookie
-//= require jquery.ui.datepicker
+//= require jquery-ui
 //= require fancybox
 //= require bootstrap
 //= require_tree .

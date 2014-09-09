@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
+ruby '2.0.0'
+
+gem 'rails', '3.2.19'
 gem 'bootstrap-sass', '2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -17,7 +19,7 @@ gem 'rails-i18n', '~> 3.0.0.pre'
 gem 'simple_form'
 
 gem "jquery-ui-rails"
-gem 'jquery-rails', '2.0.2'
+gem 'jquery-rails'
 gem "fancybox2-rails", "0.2.4"
 
 gem 'newrelic_rpm'
@@ -65,8 +67,6 @@ end
 group :production do
   gem 'pg', '0.12.2'
 end
-
-ruby '2.0.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
