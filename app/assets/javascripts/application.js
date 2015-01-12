@@ -19,10 +19,11 @@
 //= require_tree .
 
 $(document).ready(function() {
-    $('.fancybox').fancybox({
-      padding : 0,
-      openEffect  : 'elastic'
-    });
+  $('a.fancybox').fancybox({
+    padding : 0,
+    openEffect  : 'elastic'
+  });
+
 
 $('.smooth_anker').click(function(e){
     e.preventDefault();

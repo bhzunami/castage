@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.2'
 
 gem 'rails', '3.2.19'
 gem 'bootstrap-sass', '2.1'
@@ -20,7 +20,7 @@ gem 'simple_form'
 
 gem "jquery-ui-rails"
 gem 'jquery-rails'
-gem "fancybox2-rails", "0.2.4"
+gem "fancybox2-rails", "0.2.8"
 
 gem 'newrelic_rpm'
 
