@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
 
 	def create
 		setup
-		@booking = Booking.new(params[:booking])
+		@booking = Booking.new(booking_params)
 		if @booking.save
 			@booking.new_booking
 			flash[:success] = "Vielen Dankf für Ihre Anfrage"
@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
 	end
 
 	def simple_booking_create
-		@booking = Booking.new(params[:booking])
+		@booking = Booking.new(booking_params)
 		@booking.email = 'karinknoell@yahoo.de'
 		@booking.name = 'Familie Knöll'
 		@booking.adults = 2
@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
 
 	def update
 		@booking = Booking.find_by_id(params[:id])
-		if @booking.update_attributes(params[:booking])
+		if @booking.update_attributes(booking_params)
 			flash[:success] = "Anfrage erfolgreich gespeichert"
 			redirect_to bookings_path
 		else
@@ -113,6 +113,10 @@ class BookingsController < ApplicationController
 
 #-------------------------------
 	private
+
+	def booking_params
+		params.require(:booking).permit(:adults, :children, :email, :end_date, :name, :note, :start_date, :with_car, :terms_of_service)
+	  end
 
 	def setup
 		get_reserved_dates

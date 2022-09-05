@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(params[:user])
+  	@user = User.new(user_params)
   	if @user.save
   		flash[:success] = "Benutzer #{@user.name} erfolgreich angelegt"
   		redirect_to current_user
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def update
   	@user = User.find(params[:id])
-  	if @user.update_attributes(params[:user])
+  	if @user.update_attributes(user_params)
   		flash[:success] = "Profil erfogreich gespeichert"
   		sign_in @user
   		redirect_to @user
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     if @user.password_reset_sent_at < 2.hours.ago
       flash[:error] = "Dieser Link ist abgelaufen, bitte lassen Sie sich einen neuen zukommen"
       render 'password_reset'
-    elsif @user.update_attributes(params[:user])
+    elsif @user.update_attributes(user_params)
       sign_in @user
       redirect_to root_url, :notice => "Das Passwort wurde geändert"
     else
@@ -81,6 +81,12 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
+  end
+
 
   def correct_user
   	@user = User.find(params[:id])
