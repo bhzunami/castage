@@ -14,10 +14,10 @@ Castage::Application.routes.draw do
   match '/simple_booking', to: 'bookings#simple_booking_new', via: 'get'
   post '/simple_booking', to: 'bookings#simple_booking_create'
 #static pages
-  match '/property_description', to: 'static_pages#property_description'
-  match '/contact',              to: 'static_pages#contact'
-  match '/gallery',              to: 'static_pages#foto_gallery'
-  match '/archived_bookings',    to: 'bookings#archived_bookings'
+  get '/property_description', to: 'static_pages#property_description'
+  get '/contact',              to: 'static_pages#contact'
+  get '/gallery',              to: 'static_pages#foto_gallery'
+  get '/archived_bookings',    to: 'bookings#archived_bookings'
 
 # Login
   match '/login',  to: 'sessions#new',         via: 'get'

@@ -17,15 +17,15 @@
 #
 
 class Booking < ActiveRecord::Base
-  attr_accessible :adults, 
-  								:children, 
-  								:email, 
-  								:end_date, 
-  								:name, 
-  								:note, 
-  								:start_date, 
-  								:with_car,
-                  :terms_of_service
+  # attr_accessible :adults, 
+  # 								:children, 
+  # 								:email, 
+  # 								:end_date, 
+  # 								:name, 
+  # 								:note, 
+  # 								:start_date, 
+  # 								:with_car,
+  #                 :terms_of_service
 
 # Validations
 #----------------------------------------
